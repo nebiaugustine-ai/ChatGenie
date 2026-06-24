@@ -1,2 +1,3 @@
 cg-venv
 __pycache__
+.env
