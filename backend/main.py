@@ -1,9 +1,10 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.api.chat_router import router as appu
+from backend.api.chat_router import router as chat
+from backend.api.dummy_router import router as dummy
 
-app = FastAPI(title="ChatGenie API")
+app  = FastAPI(title="ChatGenie API")
 
 app.add_middleware(
     CORSMiddleware,
@@ -13,5 +14,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(appu)
+app.include_router(dummy)
+app.include_router(chat)
 
